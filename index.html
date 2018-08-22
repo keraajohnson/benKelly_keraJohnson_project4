@@ -9,16 +9,22 @@
 	<header>
 		<h2>Logo</h2>
 	</header>
-	<main>
+	<main class="main">
 		<div class="wrapper">
-			<h1>Weather API</h1>
+			<h1>Weather/Location API</h1>
 			<form action="submit">
 				<label for="vacationSearch">Vacation Search</label>
 				<input type="text" name="vacationSearch" id="vacationSearch" class="vacationSearch">
 				<button type="submit" class="submit">Find Your Results</button>
 			</form>
-			<div class="results">
-				
+			<div class="results hide">
+				<ul>
+					<li class="countryName"> Name </li>
+					<li class="countryRegion"> Region</li>
+					<li class="countryCapital"> Capital</li>
+					<li class="countryCurrency"> Currency</li>
+					<li class="callingCode"> Calling Code</li>
+				</ul>
 			</div>
 		</div>
 	</main>
