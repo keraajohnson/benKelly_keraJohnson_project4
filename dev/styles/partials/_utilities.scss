@@ -20,3 +20,52 @@ html{
 body{
     font-size: 1.6rem;
 }
+
+li {
+    list-style: none;
+}
+
+// colour variables 
+
+$mainText: #000000;
+$accentText: red;
+$backgroundColor: palegoldenrod;
+
+@mixin headings($font-size) {
+    font-size: $font-size;
+    color: $mainText;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@mixin paragraphs($font-size) {
+    font-size: $font-size;
+    color: $mainText;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+}
+
+@mixin displayFlex {
+    display: flex;
+}
+
+// break point mixins
+
+@mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (max-width: 1080px) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (max-width: 940px) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (max-width: 600px) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (max-width: 550px)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 340px)  { @content ; }
+
+  }
+}
