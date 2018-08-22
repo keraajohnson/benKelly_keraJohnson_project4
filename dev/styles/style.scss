@@ -1,8 +1,5 @@
-h1{
-	color: darkcyan;
-}
-
-body{
-	margin: 0;
-	padding: 0;
-}
+@import "partials/setup.scss";
+@import "partials/utilities.scss";
+@import "partials/header.scss";
+@import "partials/main.scss";
+@import "partials/footer.scss";
