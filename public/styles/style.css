@@ -160,3 +160,9 @@ html {
 
 body {
   font-size: 1.6rem; }
+
+li {
+  list-style: none; }
+
+.hide {
+  display: none; }
