@@ -8,15 +8,12 @@ app.locations = function () {
         method: 'GET',
         dataType: 'json'
     }).then((results) => {
-        // console.log(results);
         app.countryInfo(results);
-        // console.log(results);
     })
 }
 
 // create an array of objects out of this forEach loop
 app.countryInfo = function(countryArray) {
-    // console.log(countryArray.length);
     countryArray.forEach(function(country){
         if (country.name && country.capital) {
             app.countries.push({
@@ -25,20 +22,17 @@ app.countryInfo = function(countryArray) {
             });
         }
     });
-    app.randomizer();
 }
 
 // random function 
 app.randomizer = function () {
-    console.log(app.countries.length)
-    const random = Math.floor(Math.random() * app.countries.length) + 1;
-    // console.log(random);
-    app.events(random);
+    const random = Math.floor(Math.random() * app.countries.length);
+    return app.countries[random];
 }
 
+app.getRandomNumber = (number) => Math.floor(Math.random() * number);
 
-app.events = function (randomNumber) {
-    let randomValue = randomNumber;
+app.events = function () {
     $('.startButton').on('click', function () {
         // game rules pop up
         $('.gameLoad').addClass('hide');
@@ -51,23 +45,26 @@ app.events = function (randomNumber) {
                 $('.countDown').text(`${counter}`);
             };
             if(counter === 0){
-                alert(`Game Over`);
+                // alert(`Game Over`);
             };
         },1000);
-        // question start
-        let question = app.countries[randomValue];
-        $('.country').text(question.name);
-        console.log(question.name);
-        console.log(question.capital);
-    });
+        // array of answers
+        let answers = [];
+        for (let i = 0; i < 4; i++){
+            answers.push(app.randomizer());
+        }
+        let correctAnswer = answers[app.getRandomNumber(4)];
+
+        // loop through all of the answers
+        $('.answerOne').text(answers[0].capital);
+        $('.answerTwo').text(answers[1].capital);
+        $('.answerThree').text(answers[2].capital);
+        $('.answerFour').text(answers[3].capital);
+        $('.country').text(correctAnswer.name); 
+      });
+ 
 }
 
-// start button starts the game (rules)
-// timer of 1 minute 
-// get a random country 
-// display it on the screen
-// get 4 random (one is correct) capital cities
-// display them on the screen
 // populate a new country with 4 new cities on the click of an input on the previous screen 
 // tally the score as the player plays 
 
@@ -77,9 +74,7 @@ app.events = function (randomNumber) {
 
 // init function 
 app.init = function () {
-    // new
-    // app.events();
-    // app.randomizer();
+    app.events();
     app.locations();
 }
 
@@ -87,32 +82,3 @@ app.init = function () {
 $(function() {
     app.init();
 });
-
-
-
-
-
-
-
-// function to determine the name of the country entered into the input
-// app.countryName = function () {
-//     $('form').on('submit', function (e) {
-//         e.preventDefault();
-//         let countrySelection = $('.vacationSearch').val();
-//         app.locations(countrySelection);
-//     });
-// }
-
-// function to display the information gathered from the API on the page 
-// app.display = function(res) {
-//     const countryName = $('<h2>').text(res[0].name);
-//     const countryRegion = $('<p>').text(res[0].region);
-//     const countryCapital = $('<p>').text(res[0].capital);
-//     const countryCurrency = $('<p>').text(res[0].currencies[0].name);
-//     const callingCode = $('<p>').text(res[0].callingCodes[0]);
-//     $('.countryName').append(countryName);
-//     $('.countryRegion').append(countryRegion);
-//     $('.countryCapital').append(countryCapital);
-//     $('.countryCurrency').append(countryCurrency);
-//     $('.callingCode').append(callingCode);
-// };

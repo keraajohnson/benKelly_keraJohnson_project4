@@ -232,7 +232,7 @@ main {
   .buttons .animate {
     transition: all 0.1s;
     -webkit-transition: all 0.1s; }
-  .buttons .action-button {
+  .buttons .actionButton {
     position: relative;
     padding: 10px 40px;
     margin: 0px 10px 10px 0px;
@@ -242,7 +242,7 @@ main {
     color: white;
     text-align: center;
     text-decoration: none; }
-    .buttons .action-button:active {
+    .buttons .actionButton:active {
       transform: translate(0px, 5px);
       -webkit-transform: translate(0px, 5px);
       border-bottom: 1px solid; }
