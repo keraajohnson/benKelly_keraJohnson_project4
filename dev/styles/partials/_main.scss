@@ -1,3 +1,72 @@
 .hide {
     display: none;
 }
+
+// new
+
+main {
+    background-color: $backgroundColour;
+    height: 95vh;
+    text-align: center;
+}
+
+.capitalCity {
+    @include headings(6.5rem);
+    color: white;
+    text-align: center;
+}
+
+// button styles
+.buttons {
+    @include displayFlex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+    .animate
+    {
+        transition: all 0.1s;
+        -webkit-transition: all 0.1s;
+    }
+
+    .action-button
+    {
+        position: relative;
+        padding: 10px 40px;
+        margin: 0px 10px 10px 0px;
+        width: 40%;
+        border-radius: 10px;
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        text-decoration: none;	
+            &:active {
+                transform: translate(0px,5px);
+                -webkit-transform: translate(0px,5px);
+                border-bottom: 1px solid;
+            }
+    }
+
+    .answerOne {
+        background-color: $buttonColour1;
+        border-bottom: 5px solid #42793c;
+        text-shadow: 0px -2px #42793c;
+    }
+
+    .answerTwo {
+        background-color: $buttonColour2;
+        border-bottom: 5px solid #3d7360;
+        text-shadow: 0px -2px #3d7360;
+    }
+
+    .answerThree {
+        background-color: $buttonColour3;
+        border-bottom: 5px solid #903556;
+        text-shadow: 0px -2px #903556;
+    }
+
+    .answerFour {
+        background-color: $buttonColour4;
+        border-bottom: 5px solid #227e8f;
+        text-shadow: 0px -2px #227e8f;
+    }
+}    
