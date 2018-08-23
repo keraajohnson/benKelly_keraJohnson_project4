@@ -27,6 +27,14 @@ app.countryInfo = function(countryArray) {
     }
 };
 
+// new
+app.events = function () {
+    $('.startButton').on('click', function () {
+        console.log('clicked');
+        $('.gameLoad').addClass('hide');
+    });
+}
+
 // start button starts the game (rules)
     // timer of 1 minute 
 // get a random country 
@@ -43,6 +51,8 @@ app.countryInfo = function(countryArray) {
 // init function 
 app.init = function () {
     app.locations();
+    // new
+    app.events();
 }
 
 // document ready

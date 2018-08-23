@@ -19,30 +19,38 @@ html{
 
 body{
     font-size: 1.6rem;
-}
-
-li {
-    list-style: none;
+    position: relative;
 }
 
 // colour variables 
 
+// new
 $mainText: #000000;
-$accentText: red;
-$backgroundColor: palegoldenrod;
+// new
+$buttonColour1: #5fad56;
+$colour2: #f2c14e;
+$backgroundColour: #f78154;
+$buttonColour2: #4d9078;
+$buttonColour3: #b4436c;
+$buttonColour4: #2B9EB3;
+$buttonColour5: #274060;
 
 @mixin headings($font-size) {
     font-size: $font-size;
+    // new
+    font-family: 'Archivo Black', sans-serif;
     color: $mainText;
-    letter-spacing: 2px;
+    letter-spacing: 9px;
     text-transform: uppercase;
 }
 
 @mixin paragraphs($font-size) {
     font-size: $font-size;
+    // new
+    font-family: 'Montserrat', sans-serif;
     color: $mainText;
-    line-height: 16px;
-    letter-spacing: 1.5px;
+    line-height: 25px;
+    letter-spacing: 2.7px;
 }
 
 @mixin displayFlex {
