@@ -1,5 +1,7 @@
 const app = {}
 
+app.countries = []
+
 app.locations = function () {
     $.ajax({
         url: `https://restcountries.eu/rest/v2/all`,
@@ -7,30 +9,36 @@ app.locations = function () {
         dataType: 'json'
     }).then((results) => {
         // console.log(results);
-        app.countryInfo(results)
+        app.countryInfo(results);
+        // console.log(results);
     })
 }
 
-// random function 
-app.randomizer = function(item) {
-    Math.floor(Math.random() * item.length);
-    console.log(item);
+// create an array of objects out of this forEach loop
+app.countryInfo = function(countryArray) {
+    // console.log(countryArray.length);
+    countryArray.forEach(function(country){
+        if (country.name && country.capital) {
+            app.countries.push({
+                name: country.name,
+                capital: country.capital,
+            });
+        }
+    });
+    app.randomizer();
 }
 
-app.countryInfo = function(countryArray) {
-    for(let i = 0; i <= countryArray.length; i++) {
-        const countryName = countryArray[i].name;
-        console.log(countryName);
-        const countryCapital = countryArray[i].capital;
-        console.log(countryCapital);
-        app.randomizer(countryArray);
-    }
-};
+// random function 
+app.randomizer = function () {
+    console.log(app.countries.length)
+    const random = Math.floor(Math.random() * app.countries.length) + 1;
+    console.log(random);
+}
 
-// new
+
 app.events = function () {
     $('.startButton').on('click', function () {
-        console.log('clicked');
+        console.log('clicked')
         $('.gameLoad').addClass('hide');
     });
 }
@@ -53,6 +61,7 @@ app.init = function () {
     app.locations();
     // new
     app.events();
+    // app.randomizer();
 }
 
 // document ready
