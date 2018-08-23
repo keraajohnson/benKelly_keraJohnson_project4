@@ -14,7 +14,6 @@ app.locations = function () {
     });
 };
 
-// create an array of objects out of this forEach loop
 app.countryInfo = function(countryArray) {
     countryArray.forEach(function(country){
         if (country.name && country.capital) {
@@ -26,7 +25,6 @@ app.countryInfo = function(countryArray) {
     });
 };
 
-// random function 
 app.randomizer = function () {
     const random = Math.floor(Math.random() * app.countries.length);
     return app.countries[random];
@@ -39,11 +37,8 @@ app.getAnswers = function(){
     for (let i = 0; i < 4; i++) {
         answers.push(app.randomizer());
     }
-    app.correctAnswer = answers[app.getRandomNumber(4)];
-    // console.log(app.correctAnswer);
-    
+    app.correctAnswer = answers[app.getRandomNumber(4)];  
 
-    // loop through all of the answers
     $('.answerOne').text(answers[0].capital);
     $('.answerTwo').text(answers[1].capital);
     $('.answerThree').text(answers[2].capital);
@@ -65,40 +60,31 @@ app.events = function () {
                 $('.countDown').text(`${counter}`);
             };
             if(counter === 0){
-                // alert(`Game Over`);
+                
             };
         },1000);
         app.getAnswers();
+
       });
       $('.actionButton').on('click', function(e){
           e.preventDefault();
           let clickedAnswer = $(this).text();
           const correctAnswer = app.correctAnswer;
-        //   console.log(clickedAnswer, correctAnswer.capital);
+
           if(clickedAnswer === correctAnswer.capital){
               app.score.push(correctAnswer);
               console.log(app.score);
           }
           app.getAnswers();
-        // keep score - increase on right answer
-        // push correct answer to score array
+          $('.scoreCard').text(app.score.length);
       });
 }
 
-// populate a new country with 4 new cities on the click of an input on the previous screen 
-// tally the score as the player plays 
-
-// create an array/object of responses to display on the screen 
-
-// after the minute is up display the final score 
-
-// init function 
 app.init = function () {
     app.events();
     app.locations();
 }
 
-// document ready
 $(function() {
     app.init();
 });
