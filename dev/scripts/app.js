@@ -1,6 +1,8 @@
-const app = {}
+const app = {};
 
-app.countries = []
+app.countries = [];
+
+app.score = [];
 
 app.locations = function () {
     $.ajax({
@@ -9,8 +11,8 @@ app.locations = function () {
         dataType: 'json'
     }).then((results) => {
         app.countryInfo(results);
-    })
-}
+    });
+};
 
 // create an array of objects out of this forEach loop
 app.countryInfo = function(countryArray) {
@@ -22,7 +24,7 @@ app.countryInfo = function(countryArray) {
             });
         }
     });
-}
+};
 
 // random function 
 app.randomizer = function () {
@@ -31,6 +33,24 @@ app.randomizer = function () {
 }
 
 app.getRandomNumber = (number) => Math.floor(Math.random() * number);
+
+app.getAnswers = function(){
+    let answers = [];
+    for (let i = 0; i < 4; i++) {
+        answers.push(app.randomizer());
+    }
+    app.correctAnswer = answers[app.getRandomNumber(4)];
+    // console.log(app.correctAnswer);
+    
+
+    // loop through all of the answers
+    $('.answerOne').text(answers[0].capital);
+    $('.answerTwo').text(answers[1].capital);
+    $('.answerThree').text(answers[2].capital);
+    $('.answerFour').text(answers[3].capital);
+    $('.country').text(app.correctAnswer.name);
+    return app.correctAnswer;
+};
 
 app.events = function () {
     $('.startButton').on('click', function () {
@@ -48,21 +68,21 @@ app.events = function () {
                 // alert(`Game Over`);
             };
         },1000);
-        // array of answers
-        let answers = [];
-        for (let i = 0; i < 4; i++){
-            answers.push(app.randomizer());
-        }
-        let correctAnswer = answers[app.getRandomNumber(4)];
-
-        // loop through all of the answers
-        $('.answerOne').text(answers[0].capital);
-        $('.answerTwo').text(answers[1].capital);
-        $('.answerThree').text(answers[2].capital);
-        $('.answerFour').text(answers[3].capital);
-        $('.country').text(correctAnswer.name); 
+        app.getAnswers();
       });
- 
+      $('.actionButton').on('click', function(e){
+          e.preventDefault();
+          let clickedAnswer = $(this).text();
+          const correctAnswer = app.correctAnswer;
+        //   console.log(clickedAnswer, correctAnswer.capital);
+          if(clickedAnswer === correctAnswer.capital){
+              app.score.push(correctAnswer);
+              console.log(app.score);
+          }
+          app.getAnswers();
+        // keep score - increase on right answer
+        // push correct answer to score array
+      });
 }
 
 // populate a new country with 4 new cities on the click of an input on the previous screen 
