@@ -32,23 +32,42 @@ app.countryInfo = function(countryArray) {
 app.randomizer = function () {
     console.log(app.countries.length)
     const random = Math.floor(Math.random() * app.countries.length) + 1;
-    console.log(random);
+    // console.log(random);
+    app.events(random);
 }
 
 
-app.events = function () {
+app.events = function (randomNumber) {
+    let randomValue = randomNumber;
     $('.startButton').on('click', function () {
-        console.log('clicked')
+        // game rules pop up
         $('.gameLoad').addClass('hide');
+        // game countdown clock
+        let counter = 60;
+        $('.clock').append(`<p class="countDown">${counter}</p>`);
+        setInterval(function(){
+            counter--;
+            if(counter >= 0){
+                $('.countDown').text(`${counter}`);
+            };
+            if(counter === 0){
+                alert(`Game Over`);
+            };
+        },1000);
+        // question start
+        let question = app.countries[randomValue];
+        $('.country').text(question.name);
+        console.log(question.name);
+        console.log(question.capital);
     });
 }
 
 // start button starts the game (rules)
-    // timer of 1 minute 
+// timer of 1 minute 
 // get a random country 
-    // display it on the screen
+// display it on the screen
 // get 4 random (one is correct) capital cities
-    // display them on the screen
+// display them on the screen
 // populate a new country with 4 new cities on the click of an input on the previous screen 
 // tally the score as the player plays 
 
@@ -58,10 +77,10 @@ app.events = function () {
 
 // init function 
 app.init = function () {
-    app.locations();
     // new
-    app.events();
+    // app.events();
     // app.randomizer();
+    app.locations();
 }
 
 // document ready
