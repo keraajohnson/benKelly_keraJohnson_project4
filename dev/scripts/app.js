@@ -4,6 +4,8 @@ app.countries = [];
 
 app.usedCountries = [];
 
+app.wrongAnswers = [];
+
 app.score = [];
 
 app.locations = function () {
@@ -30,15 +32,7 @@ app.countryInfo = function(countryArray) {
 app.randomizer = function () {
     const random = Math.floor(Math.random() * app.countries.length);
     return app.countries[random];
-}
-
-// app.spliceRandomizer = function () {
-//     const random = Math.floor(Math.random() * app.countries.length);
-//     const result = app.countries[random];
-//     const pizza = app.countries.splice(random, 1).push([0]);
-//     console.log(app.usedCountries.push(pizza));
-//     return result;
-// };
+};
 
 app.getRandomNumber = function (number) { 
     return Math.floor(Math.random() * number);
@@ -60,12 +54,12 @@ app.getAnswers = function(){
 
     for(let i = 0; i < app.countries.length; i++ ){
         if (app.countries[i].name === app.correctAnswer.name) {
-            app.usedCountries.push(app.countries.splice(i, 1));
+            app.usedCountries.push(app.countries.splice(i, 1)[0]);
         }
     }
     
-    console.log(app.usedCountries);
-    console.log(app.countries);   
+    // console.log(app.usedCountries);
+    // console.log(app.countries);   
 
     return app.correctAnswer;
 };
@@ -86,6 +80,15 @@ app.events = function () {
             if(counter === 0){
                 $('main').addClass('hide');
                 $('.finalResult').removeClass('hide');
+                // console.log(app.usedCountries);
+                app.score.forEach(function (rightCountry){
+                    $('.finalResult').append(`<h2>${rightCountry.name}</h2><h3>${rightCountry.capital}</h3>`);
+                });
+                app.wrongAnswers.forEach(function (wrongCountry){
+                    // console.log(country);
+                    $('.finalResult').append(`<h2>${wrongCountry.name}</h2><h3>${wrongCountry.capital}</h3>`);
+                });
+
             };
         },1000);
         app.getAnswers();
@@ -93,16 +96,25 @@ app.events = function () {
       $('.actionButton').on('click', function(e){
           e.preventDefault();
           let clickedAnswer = $(this).text();
+        //   const answer = $(this)
+        console.log(this);
           const correctAnswer = app.correctAnswer;
-
+        //   console.log(correctAnswer);
           if(clickedAnswer === correctAnswer.capital){
               app.score.push(correctAnswer);
-          }
+          } 
+          else {
+              app.wrongAnswers.push(correctAnswer);
+          };
           app.getAnswers();
           $('.score').text(app.score.length);
           $('.buttons').trigger('reset');
       });
 }
+
+// app.compare = function(usedCountries, score){
+//     usedCountries.forEach((usedCity)=>)
+// }
 
 app.init = function () {
     app.events();
