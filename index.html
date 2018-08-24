@@ -10,11 +10,13 @@
 </head>
 <body>
 	<header class="gameLoad">
-		<h2>Capital Cities Game</h2>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore amet error dicta vel totam deserunt dignissimos sit in, voluptatum iste at vitae sed corrupti impedit iusto nemo exercitationem rerum veritatis!</p>
-		<button class="startButton">Start</button>
+		<div class="wrapper">
+			<h2>Guess That Capital</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore amet error dicta vel totam deserunt dignissimos sit in, voluptatum iste at vitae sed corrupti impedit iusto nemo exercitationem rerum veritatis!</p>
+			<button class="startButton">Start</button>
+		</div>
 	</header>
-	<main>
+	<main class="main hide">
 		<div class="wrapper">
 			<div class="clock">
 	
@@ -27,10 +29,14 @@
 				<button class="answerFour actionButton shadow animate"></button>
 			</form>
 			<div class="scoreCard">
-				0
+				<p>Your Score</p>	
+				<p class="score">0</p>
 			</div>
 		</div>
 	</main>
+	<section class="finalResult hide">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam laudantium itaque distinctio aliquid, cum saepe autem ipsa, minima illum reprehenderit, libero quod non placeat? Cum deserunt aut quaerat! Assumenda, quo.</p>
+	</section>
 	<footer>
 		<p>Ben Kelly & Kera Johnson</p>
 	</footer>

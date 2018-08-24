@@ -164,14 +164,11 @@ body {
 
 .gameLoad {
   background-color: rgba(252, 171, 16, 0.95);
-  width: 61%;
-  position: absolute;
-  padding: 40px;
-  left: 19.1%;
-  top: 25%;
-  z-index: 10; }
-  .gameLoad h2 {
-    font-size: 4rem;
+  width: 100%;
+  height: 100vh;
+  padding: 40px; }
+  .gameLoad .wrapper h2 {
+    font-size: 5rem;
     font-family: 'Archivo Black', sans-serif;
     color: #000000;
     letter-spacing: 9px;
@@ -179,7 +176,7 @@ body {
     color: white;
     text-align: center;
     margin: 20px 0; }
-  .gameLoad p {
+  .gameLoad .wrapper p {
     font-size: 2.2rem;
     font-family: 'Montserrat', sans-serif;
     color: #000000;
@@ -187,7 +184,7 @@ body {
     letter-spacing: 2.7px;
     color: white;
     margin-bottom: 30px; }
-  .gameLoad .startButton {
+  .gameLoad .wrapper .startButton {
     font-size: 2.2rem;
     font-family: 'Montserrat', sans-serif;
     color: #000000;
@@ -203,7 +200,7 @@ body {
     border-radius: 100px;
     text-transform: uppercase;
     transition: .5s all ease; }
-    .gameLoad .startButton:hover {
+    .gameLoad .wrapper .startButton:hover {
       background: white;
       color: #274060; }
 
@@ -212,17 +209,41 @@ body {
 
 main {
   background-color: #f78154;
-  height: 95vh;
-  text-align: center; }
-
-.capitalCity {
-  font-size: 6.5rem;
-  font-family: 'Archivo Black', sans-serif;
-  color: #000000;
-  letter-spacing: 9px;
-  text-transform: uppercase;
-  color: white;
-  text-align: center; }
+  text-align: center;
+  height: 100vh; }
+  main .country {
+    font-size: 6.8rem;
+    font-family: 'Archivo Black', sans-serif;
+    color: #000000;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin: 30px 0; }
+  main .clock {
+    font-size: 7rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    line-height: 25px;
+    letter-spacing: 2.7px;
+    color: white;
+    padding: 30px 0; }
+  main .scoreCard {
+    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    line-height: 25px;
+    letter-spacing: 2.7px;
+    color: white; }
+    main .scoreCard p {
+      font-size: 4rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #000000;
+      line-height: 25px;
+      letter-spacing: 2.7px;
+      color: white;
+      text-transform: uppercase;
+      padding: 20px 0; }
 
 .buttons {
   display: flex;
@@ -241,11 +262,19 @@ main {
     font-size: 3rem;
     color: white;
     text-align: center;
-    text-decoration: none; }
+    text-decoration: none;
+    transition: 1s all ease;
+    border: none; }
     .buttons .actionButton:active {
       transform: translate(0px, 5px);
       -webkit-transform: translate(0px, 5px);
       border-bottom: 1px solid; }
+    .buttons .actionButton:focus {
+      background-color: #274060;
+      border-bottom: 5px solid #1f334c;
+      text-shadow: 0px -2px #1f334c;
+      border: none;
+      outline: none; }
   .buttons .answerOne {
     background-color: #5fad56;
     border-bottom: 5px solid #42793c;
@@ -262,3 +291,7 @@ main {
     background-color: #2B9EB3;
     border-bottom: 5px solid #227e8f;
     text-shadow: 0px -2px #227e8f; }
+
+.finalResult {
+  background-color: rgba(225, 85, 84, 0.8);
+  height: 95vh; }
