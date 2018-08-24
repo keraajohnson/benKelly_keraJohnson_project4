@@ -269,7 +269,7 @@ main {
       transform: translate(0px, 5px);
       -webkit-transform: translate(0px, 5px);
       border-bottom: 1px solid; }
-    .buttons .actionButton:focus {
+    .buttons .actionButton:active {
       background-color: #274060;
       border-bottom: 5px solid #1f334c;
       text-shadow: 0px -2px #1f334c;
