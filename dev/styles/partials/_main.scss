@@ -61,7 +61,7 @@ main {
                 -webkit-transform: translate(0px,5px);
                 border-bottom: 1px solid;
             }
-            &:focus {
+            &:active {
                 background-color: $buttonColour5;
                 border-bottom: 5px solid #1f334c;
                 text-shadow: 0px -2px #1f334c;

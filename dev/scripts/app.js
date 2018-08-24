@@ -2,6 +2,8 @@ const app = {};
 
 app.countries = [];
 
+app.usedCountries = [];
+
 app.score = [];
 
 app.locations = function () {
@@ -30,20 +32,41 @@ app.randomizer = function () {
     return app.countries[random];
 }
 
-app.getRandomNumber = (number) => Math.floor(Math.random() * number);
+// app.spliceRandomizer = function () {
+//     const random = Math.floor(Math.random() * app.countries.length);
+//     const result = app.countries[random];
+//     const pizza = app.countries.splice(random, 1).push([0]);
+//     console.log(app.usedCountries.push(pizza));
+//     return result;
+// };
+
+app.getRandomNumber = function (number) { 
+    return Math.floor(Math.random() * number);
+};
 
 app.getAnswers = function(){
     let answers = [];
     for (let i = 0; i < 4; i++) {
         answers.push(app.randomizer());
     }
-    app.correctAnswer = answers[app.getRandomNumber(4)];  
+    const randomNumber = app.getRandomNumber(4);
+    app.correctAnswer = answers[randomNumber];
 
     $('.answerOne').text(answers[0].capital);
     $('.answerTwo').text(answers[1].capital);
     $('.answerThree').text(answers[2].capital);
     $('.answerFour').text(answers[3].capital);
     $('.country').text(app.correctAnswer.name);
+
+    for(let i = 0; i < app.countries.length; i++ ){
+        if (app.countries[i].name === app.correctAnswer.name) {
+            app.usedCountries.push(app.countries.splice(i, 1));
+        }
+    }
+    
+    console.log(app.usedCountries);
+    console.log(app.countries);   
+
     return app.correctAnswer;
 };
 
@@ -66,7 +89,6 @@ app.events = function () {
             };
         },1000);
         app.getAnswers();
-
       });
       $('.actionButton').on('click', function(e){
           e.preventDefault();
@@ -75,10 +97,10 @@ app.events = function () {
 
           if(clickedAnswer === correctAnswer.capital){
               app.score.push(correctAnswer);
-              console.log(app.score);
           }
           app.getAnswers();
           $('.score').text(app.score.length);
+          $('.buttons').trigger('reset');
       });
 }
 
