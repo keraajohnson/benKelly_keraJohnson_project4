@@ -51,6 +51,7 @@ app.events = function () {
     $('.startButton').on('click', function () {
         // game rules pop up
         $('.gameLoad').addClass('hide');
+        $('main').removeClass('hide');
         // game countdown clock
         let counter = 60;
         $('.clock').append(`<p class="countDown">${counter}</p>`);
@@ -60,7 +61,8 @@ app.events = function () {
                 $('.countDown').text(`${counter}`);
             };
             if(counter === 0){
-                
+                $('main').addClass('hide');
+                $('.finalResult').removeClass('hide');
             };
         },1000);
         app.getAnswers();
@@ -76,7 +78,7 @@ app.events = function () {
               console.log(app.score);
           }
           app.getAnswers();
-          $('.scoreCard').text(app.score.length);
+          $('.score').text(app.score.length);
       });
 }
 
