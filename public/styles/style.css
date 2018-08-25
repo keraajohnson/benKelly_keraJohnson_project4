@@ -163,49 +163,112 @@ body {
   position: relative; }
 
 .gameLoad {
-  background-color: rgba(252, 171, 16, 0.95);
+  background-color: rgba(252, 171, 16, 0.82);
   width: 100%;
   height: 100vh;
   padding: 40px; }
-  .gameLoad .wrapper h2 {
-    font-size: 5rem;
-    font-family: 'Archivo Black', sans-serif;
-    color: #000000;
-    letter-spacing: 9px;
-    text-transform: uppercase;
-    color: white;
-    text-align: center;
-    margin: 20px 0; }
-  .gameLoad .wrapper p {
-    font-size: 2.2rem;
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    line-height: 25px;
-    letter-spacing: 2.7px;
-    color: white;
-    margin-bottom: 30px; }
-  .gameLoad .wrapper .startButton {
-    font-size: 2.2rem;
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    line-height: 25px;
-    letter-spacing: 2.7px;
-    color: white;
-    display: block;
-    margin: 0 auto;
-    background: #274060;
-    width: 18%;
-    padding: 10px 0px;
-    border: none;
-    border-radius: 100px;
-    text-transform: uppercase;
-    transition: .5s all ease; }
-    .gameLoad .wrapper .startButton:hover {
-      background: white;
-      color: #274060; }
+  .gameLoad .gameLoadContainer {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .gameLoad .gameLoadContainer h2 {
+      font-size: 7rem;
+      font-family: 'Archivo Black', sans-serif;
+      color: #000000;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+      margin: 20px 0; }
+      @media (max-width: 768px) {
+        .gameLoad .gameLoadContainer h2 {
+          font-size: 7.6rem;
+          margin-bottom: 40px; } }
+      @media (max-width: 550px) {
+        .gameLoad .gameLoadContainer h2 {
+          font-size: 3.5rem; } }
+      @media (max-width: 375px) {
+        .gameLoad .gameLoadContainer h2 {
+          font-size: 3.5rem; } }
+      @media (max-width: 320px) {
+        .gameLoad .gameLoadContainer h2 {
+          font-size: 2.8rem;
+          margin: 10px 0; } }
+    .gameLoad .gameLoadContainer p {
+      font-size: 2.2rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #000000;
+      line-height: 25px;
+      letter-spacing: 2.7px;
+      color: #274060;
+      margin-bottom: 30px;
+      letter-spacing: 4px;
+      text-align: center;
+      line-height: 45px; }
+      @media (max-width: 768px) {
+        .gameLoad .gameLoadContainer p {
+          font-size: 4.3rem;
+          line-height: 50px;
+          margin-bottom: 35px; } }
+      @media (max-width: 550px) {
+        .gameLoad .gameLoadContainer p {
+          font-size: 2rem;
+          line-height: 30px; } }
+      @media (max-width: 375px) {
+        .gameLoad .gameLoadContainer p {
+          font-size: 2rem;
+          letter-spacing: 2px;
+          line-height: 30px; } }
+      @media (max-width: 320px) {
+        .gameLoad .gameLoadContainer p {
+          font-size: 1.8rem;
+          letter-spacing: 1.5px;
+          line-height: 25px;
+          margin-bottom: 15px; } }
+    .gameLoad .gameLoadContainer .startButton {
+      font-size: 2.2rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #000000;
+      line-height: 25px;
+      letter-spacing: 2.7px;
+      color: white;
+      display: block;
+      margin: 0 auto;
+      background: rgba(39, 64, 96, 0.95);
+      width: 18%;
+      padding: 12px 0px;
+      border: none;
+      border-radius: 100px;
+      text-transform: uppercase;
+      transition: .5s all ease; }
+      @media (max-width: 768px) {
+        .gameLoad .gameLoadContainer .startButton {
+          width: 45%;
+          font-size: 4rem;
+          padding: 30px 0; } }
+      @media (max-width: 550px) {
+        .gameLoad .gameLoadContainer .startButton {
+          width: 50%; } }
+      @media (max-width: 375px) {
+        .gameLoad .gameLoadContainer .startButton {
+          font-size: 2rem;
+          width: 60%; } }
+      @media (max-width: 320px) {
+        .gameLoad .gameLoadContainer .startButton {
+          font-size: 2rem;
+          width: 65%;
+          padding: 9px 0; } }
+      .gameLoad .gameLoadContainer .startButton:hover {
+        background: white;
+        color: #274060; }
 
 .hide {
   display: none; }
+
+.smallFont {
+  font-size: 1rem; }
 
 main {
   background-color: #f78154;
@@ -215,11 +278,28 @@ main {
     font-size: 6.8rem;
     font-family: 'Archivo Black', sans-serif;
     color: #000000;
-    letter-spacing: 9px;
+    letter-spacing: 10px;
     text-transform: uppercase;
     color: white;
     text-align: center;
     margin: 30px 0; }
+    @media (max-width: 768px) {
+      main .country {
+        font-size: 7.5rem; } }
+    @media (max-width: 550px) {
+      main .country {
+        font-size: 4.2rem;
+        margin: 10px;
+        letter-spacing: 1.3px; } }
+    @media (max-width: 375px) {
+      main .country {
+        font-size: 3.2rem;
+        margin: 10px;
+        letter-spacing: 1px; } }
+    @media (max-width: 320px) {
+      main .country {
+        font-size: 3rem;
+        margin: 3px; } }
   main .clock {
     font-size: 7rem;
     font-family: 'Montserrat', sans-serif;
@@ -228,6 +308,18 @@ main {
     letter-spacing: 2.7px;
     color: white;
     padding: 30px 0; }
+    @media (max-width: 768px) {
+      main .clock {
+        font-size: 7.5rem; } }
+    @media (max-width: 550px) {
+      main .clock {
+        font-size: 4.5rem; } }
+    @media (max-width: 375px) {
+      main .clock {
+        font-size: 4.5rem; } }
+    @media (max-width: 320px) {
+      main .clock {
+        font-size: 4rem; } }
   main .scoreCard {
     font-size: 4rem;
     font-family: 'Montserrat', sans-serif;
@@ -235,6 +327,12 @@ main {
     line-height: 25px;
     letter-spacing: 2.7px;
     color: white; }
+    @media (max-width: 550px) {
+      main .scoreCard {
+        font-size: 3rem; } }
+    @media (max-width: 375px) {
+      main .scoreCard {
+        font-size: 2rem; } }
     main .scoreCard p {
       font-size: 4rem;
       font-family: 'Montserrat', sans-serif;
@@ -244,12 +342,40 @@ main {
       color: white;
       text-transform: uppercase;
       padding: 20px 0; }
+      @media (max-width: 550px) {
+        main .scoreCard p {
+          font-size: 3.2rem;
+          padding: 10px 0; } }
+      @media (max-width: 375px) {
+        main .scoreCard p {
+          font-size: 3rem;
+          padding: 5px 0; } }
+      @media (max-width: 320px) {
+        main .scoreCard p {
+          font-size: 3rem; } }
+      @media (max-width: 320px) {
+        main .scoreCard p {
+          font-size: 2.5rem; } }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 30px 0; }
+  @media (max-width: 768px) {
+    .buttons {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px; } }
+  @media (max-width: 550px) {
+    .buttons {
+      flex-direction: column;
+      margin: 35px 15px; } }
+  @media (max-width: 375px) {
+    .buttons {
+      flex-direction: column;
+      justify-content: center;
+      margin: 30px 20px; } }
   .buttons .animate {
     transition: all 0.1s;
     -webkit-transition: all 0.1s; }
@@ -265,6 +391,23 @@ main {
     text-decoration: none;
     transition: 1s all ease;
     border: none; }
+    @media (max-width: 768px) {
+      .buttons .actionButton {
+        font-size: 5rem;
+        width: 80%;
+        padding: 20px 0;
+        margin: 8px 0; } }
+    @media (max-width: 550px) {
+      .buttons .actionButton {
+        width: 100%;
+        padding: 15px 0; } }
+    @media (max-width: 375px) {
+      .buttons .actionButton {
+        width: 100%; } }
+    @media (max-width: 320px) {
+      .buttons .actionButton {
+        font-size: 2.5rem;
+        padding: 10px; } }
     .buttons .actionButton:active {
       transform: translate(0px, 5px);
       -webkit-transform: translate(0px, 5px);
@@ -293,5 +436,93 @@ main {
     text-shadow: 0px -2px #227e8f; }
 
 .finalResult {
-  background-color: rgba(225, 85, 84, 0.8);
-  height: 95vh; }
+  background-color: rgba(225, 85, 84, 0.5); }
+  .finalResult .resultBox {
+    display: flex;
+    justify-content: space-between; }
+    @media (max-width: 768px) {
+      .finalResult .resultBox {
+        flex-direction: column;
+        text-align: center; } }
+    @media (max-width: 550px) {
+      .finalResult .resultBox {
+        flex-direction: column;
+        text-align: center; } }
+    @media (max-width: 375px) {
+      .finalResult .resultBox {
+        flex-direction: column;
+        text-align: center; } }
+    .finalResult .resultBox .rightAnswers,
+    .finalResult .resultBox .wrongAnswers {
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #000000;
+      line-height: 25px;
+      letter-spacing: 2.7px;
+      color: white; }
+      .finalResult .resultBox .rightAnswers h2,
+      .finalResult .resultBox .wrongAnswers h2 {
+        font-size: 2.3rem;
+        text-transform: uppercase;
+        padding: 5px 0;
+        font-weight: 300;
+        letter-spacing: 3px; }
+        @media (max-width: 768px) {
+          .finalResult .resultBox .rightAnswers h2,
+          .finalResult .resultBox .wrongAnswers h2 {
+            font-size: 3.5rem;
+            line-height: 50px; } }
+        @media (max-width: 550px) {
+          .finalResult .resultBox .rightAnswers h2,
+          .finalResult .resultBox .wrongAnswers h2 {
+            font-size: 3.3rem;
+            line-height: 40px; } }
+        @media (max-width: 320px) {
+          .finalResult .resultBox .rightAnswers h2,
+          .finalResult .resultBox .wrongAnswers h2 {
+            font-size: 2.3rem;
+            line-height: 30px; } }
+      .finalResult .resultBox .rightAnswers h3,
+      .finalResult .resultBox .wrongAnswers h3 {
+        font-size: 2rem;
+        padding: 2px 0;
+        font-weight: 300;
+        letter-spacing: 3px; }
+        @media (max-width: 768px) {
+          .finalResult .resultBox .rightAnswers h3,
+          .finalResult .resultBox .wrongAnswers h3 {
+            font-size: 3rem;
+            margin-bottom: 25px; } }
+        @media (max-width: 550px) {
+          .finalResult .resultBox .rightAnswers h3,
+          .finalResult .resultBox .wrongAnswers h3 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 35px; } }
+        @media (max-width: 320px) {
+          .finalResult .resultBox .rightAnswers h3,
+          .finalResult .resultBox .wrongAnswers h3 {
+            font-size: 2.5rem;
+            line-height: 30px; } }
+      .finalResult .resultBox .rightAnswers h4,
+      .finalResult .resultBox .wrongAnswers h4 {
+        text-transform: uppercase;
+        color: #274060;
+        font-size: 2rem;
+        font-weight: 400;
+        padding: 15px 0; }
+        @media (max-width: 768px) {
+          .finalResult .resultBox .rightAnswers h4,
+          .finalResult .resultBox .wrongAnswers h4 {
+            font-size: 4rem;
+            line-height: 50px; } }
+        @media (max-width: 550px) {
+          .finalResult .resultBox .rightAnswers h4,
+          .finalResult .resultBox .wrongAnswers h4 {
+            font-size: 3.5rem;
+            line-height: 45px; } }
+        @media (max-width: 320px) {
+          .finalResult .resultBox .rightAnswers h4,
+          .finalResult .resultBox .wrongAnswers h4 {
+            font-size: 2.3rem;
+            line-height: 35px; } }

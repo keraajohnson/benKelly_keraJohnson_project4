@@ -57,10 +57,6 @@ app.getAnswers = function(){
             app.usedCountries.push(app.countries.splice(i, 1)[0]);
         }
     }
-    
-    // console.log(app.usedCountries);
-    // console.log(app.countries);   
-
     return app.correctAnswer;
 };
 
@@ -70,7 +66,7 @@ app.events = function () {
         $('.gameLoad').addClass('hide');
         $('main').removeClass('hide');
         // game countdown clock
-        let counter = 60;
+        let counter = 7;
         $('.clock').append(`<p class="countDown">${counter}</p>`);
         setInterval(function(){
             counter--;
@@ -78,15 +74,15 @@ app.events = function () {
                 $('.countDown').text(`${counter}`);
             };
             if(counter === 0){
-                $('main').addClass('hide');
                 $('.finalResult').removeClass('hide');
-                // console.log(app.usedCountries);
+                $('main').addClass('hide');
+
                 app.score.forEach(function (rightCountry){
-                    $('.finalResult').append(`<h2>${rightCountry.name}</h2><h3>${rightCountry.capital}</h3>`);
+                    $('.rightAnswers').append(`<h2>${rightCountry.name}</h2><h3>${rightCountry.capital}</h3>`);
                 });
+                
                 app.wrongAnswers.forEach(function (wrongCountry){
-                    // console.log(country);
-                    $('.finalResult').append(`<h2>${wrongCountry.name}</h2><h3>${wrongCountry.capital}</h3>`);
+                    $('.wrongAnswers').append(`<h2>${wrongCountry.name}</h2><h3>${wrongCountry.capital}</h3>`);
                 });
 
             };
@@ -95,11 +91,10 @@ app.events = function () {
       });
       $('.actionButton').on('click', function(e){
           e.preventDefault();
+          
           let clickedAnswer = $(this).text();
-        //   const answer = $(this)
-        console.log(this);
           const correctAnswer = app.correctAnswer;
-        //   console.log(correctAnswer);
+          
           if(clickedAnswer === correctAnswer.capital){
               app.score.push(correctAnswer);
           } 
@@ -107,14 +102,10 @@ app.events = function () {
               app.wrongAnswers.push(correctAnswer);
           };
           app.getAnswers();
+          
           $('.score').text(app.score.length);
-          $('.buttons').trigger('reset');
       });
 }
-
-// app.compare = function(usedCountries, score){
-//     usedCountries.forEach((usedCity)=>)
-// }
 
 app.init = function () {
     app.events();

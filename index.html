@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header class="gameLoad">
-		<div class="wrapper">
+		<div class="wrapper gameLoadContainer">
 			<h2>Guess That Capital</h2>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore amet error dicta vel totam deserunt dignissimos sit in, voluptatum iste at vitae sed corrupti impedit iusto nemo exercitationem rerum veritatis!</p>
 			<button class="startButton">Start</button>
@@ -35,11 +35,15 @@
 		</div>
 	</main>
 	<section class="finalResult hide">
-		
+		<div class="wrapper resultBox">
+			<div class="rightAnswers">
+				<h4>Here's What You Got Right!</h4>
+			</div>
+			<div class="wrongAnswers">
+				<h4>Here's What You Got Wrong!</h4>
+			</div>
+		</div>
 	</section>
-	<footer>
-		<p>Ben Kelly & Kera Johnson</p>
-	</footer>
 	<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
 	 crossorigin='anonymous'></script>
 	<script src="public/scripts/app.js"></script>
