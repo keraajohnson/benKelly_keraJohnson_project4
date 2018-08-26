@@ -18,7 +18,6 @@
                 //laptop breakpoint 
                 @include breakpoint(laptop){
                     font-size: 11rem;
-                    line-height: 120px;
                     margin-bottom: 50px;
                 }
                 // tablet breakpoint
@@ -37,7 +36,7 @@
                 // smallmobileonly breakpoint 
                 @include breakpoint(smallmobileonly){
                     font-size: 2.8rem;
-                    margin: 10px 0;
+                    margin: 5px 0;
                 }
                 }
                 p {
@@ -69,14 +68,15 @@
                     @include breakpoint(mobileonly){
                         font-size: 2rem;
                         letter-spacing: 2px;
-                        line-height: 30px;
+                        line-height: 28px;
+                        margin-bottom: 10px;
                     }
                     // smallmobileonly breakpoint 
                     @include breakpoint(smallmobileonly){
                         font-size: 1.8rem;
                         letter-spacing: 1.5px;
                         line-height: 25px;
-                        margin-bottom: 15px;
+                        margin-bottom: 5px;
                     }
                 }
                 .startButton {
@@ -107,11 +107,14 @@
                     // phablet breakpoint
                     @include breakpoint(phablet) {
                         width: 50%;
+                        font-size: 2.5rem;
+                        padding: 15px 0;
                     }
                     // mobileonly breakpoint 
                     @include breakpoint(mobileonly){
                         font-size: 2rem;
                         width: 60%;
+                        margin: 5px 0;
                     }
                     // smallmobileonly breakpoint 
                     @include breakpoint(smallmobileonly){
