@@ -66,7 +66,7 @@ app.events = function () {
         $('.gameLoad').addClass('hide');
         $('main').removeClass('hide');
         // game countdown clock
-        let counter = 7;
+        let counter = 60;
         $('.clock').append(`<p class="countDown">${counter}</p>`);
         setInterval(function(){
             counter--;
