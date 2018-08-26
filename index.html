@@ -6,35 +6,41 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Capital City Game</title>
 	<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Montserrat:300,400" rel="stylesheet">
+	<link type="image/png" href="assets/globe.png" rel="icon">
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
+<!-- ---------- HEADER ---------- -->
 	<header class="gameLoad">
 		<div class="wrapper gameLoadContainer">
 			<h2>Guess That Capital</h2>
-			<p>This is a description of the game. This is a timed game where the user has  to guess the captial city of the country provided to them. When a minute is up they will be shown a listn of wha they got right and what they got wrong (mostly wrong, because who are we kidding).</p>
+			<p>This is a timed game where you have to guess the captial city of the country provided to you. When the minute is up, you will be shown a list of what you got right and what you got wrong (mostly wrong, because who are we kidding).</p>
 			<button class="startButton">Start</button>
 		</div>
 	</header>
+<!-- ---------- MAIN ---------- -->
 	<main class="main hide">
-		<div class="clock">
-		
-		</div>
-		<h1 class="country"></h1>
-		<div class="wrapper">
-			<form class="buttons">
-				<button class="answerOne actionButton shadow animate"></button>
-				<button  class="answerTwo actionButton shadow animate"></button>
-				<button class="answerThree actionButton shadow animate"></button>
-				<button class="answerFour actionButton shadow animate"></button>
-			</form>
-			<div class="scoreCard">
-				<p>Your Score</p>	
-				<p class="score">0</p>
+		<div class="wrapper mainContainer">
+			<div class="clock">
+			
+			</div>
+			<h1 class="country"></h1>
+			<div class="wrapper">
+				<form class="buttons">
+					<button class="answerOne actionButton shadow animate"></button>
+					<button  class="answerTwo actionButton shadow animate"></button>
+					<button class="answerThree actionButton shadow animate"></button>
+					<button class="answerFour actionButton shadow animate"></button>
+				</form>
+				<div class="scoreCard">
+					<p>Your Score</p>	
+					<p class="score">0</p>
+				</div>
 			</div>
 		</div>
 	</main>
-	<section class="finalResult hide">
+<!-- ---------- FOOTER ---------- -->
+	<footer class="finalResult hide">
 		<div class="wrapper resultBox">
 			<div class="rightAnswers">
 				<h4>Here's What You Got Right!</h4>
@@ -43,7 +49,8 @@
 				<h4>Here's What You Got Wrong!</h4>
 			</div>
 		</div>
-	</section>
+	</footer>
+<!-- ---------- SCRIPTS ---------- -->
 	<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
 	 crossorigin='anonymous'></script>
 	<script src="public/scripts/app.js"></script>

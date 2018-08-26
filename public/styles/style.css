@@ -163,16 +163,22 @@ body {
   position: relative; }
 
 .gameLoad {
-  background-color: rgba(252, 171, 16, 0.82);
+  background-image: url(../../../assets/flight-app-EN.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 40px; }
   .gameLoad .gameLoadContainer {
     display: flex;
-    height: 100%;
+    background-color: rgba(251, 213, 58, 0.95);
+    min-height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    padding: 2%;
+    border-radius: 10px; }
     .gameLoad .gameLoadContainer h2 {
       font-size: 7rem;
       font-family: 'Archivo Black', sans-serif;
@@ -187,10 +193,6 @@ body {
           font-size: 11rem;
           margin-bottom: 50px; } }
       @media (max-width: 768px) {
-        .gameLoad .gameLoadContainer h2 {
-          font-size: 7.6rem;
-          margin-bottom: 40px; } }
-      @media (max-width: 550px) {
         .gameLoad .gameLoadContainer h2 {
           font-size: 3.5rem; } }
       @media (max-width: 375px) {
@@ -218,11 +220,6 @@ body {
           line-height: 75px;
           margin-bottom: 50px; } }
       @media (max-width: 768px) {
-        .gameLoad .gameLoadContainer p {
-          font-size: 4.3rem;
-          line-height: 50px;
-          margin-bottom: 35px; } }
-      @media (max-width: 550px) {
         .gameLoad .gameLoadContainer p {
           font-size: 2rem;
           line-height: 30px; } }
@@ -262,11 +259,6 @@ body {
           padding: 40px 0; } }
       @media (max-width: 768px) {
         .gameLoad .gameLoadContainer .startButton {
-          width: 45%;
-          font-size: 4rem;
-          padding: 30px 0; } }
-      @media (max-width: 550px) {
-        .gameLoad .gameLoadContainer .startButton {
           width: 50%;
           font-size: 2.5rem;
           padding: 15px 0; } }
@@ -291,105 +283,108 @@ body {
   font-size: 1rem; }
 
 main {
-  background-color: #f78154;
+  background-color: #b5dbf2;
+  background-image: url(../../../assets/world-map.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
   text-align: center;
-  height: 100vh; }
-  main .country {
-    font-size: 7.8rem;
-    font-family: 'Archivo Black', sans-serif;
-    color: #000000;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    color: white;
-    width: 100%;
-    text-align: center;
-    margin: 15px 5px; }
-    @media (max-width: 1024px) {
-      main .country {
-        font-size: 8rem; } }
-    @media (max-width: 768px) {
-      main .country {
-        font-size: 7.5rem; } }
-    @media (max-width: 550px) {
-      main .country {
-        font-size: 4.2rem;
-        margin: 10px;
-        letter-spacing: 1.3px; } }
-    @media (max-width: 375px) {
-      main .country {
-        font-size: 3.2rem;
-        margin: 10px;
-        letter-spacing: 1px; } }
-    @media (max-width: 320px) {
-      main .country {
-        font-size: 3rem;
-        margin: 3px; } }
-  main .clock {
-    font-size: 7rem;
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    line-height: 25px;
-    letter-spacing: 2.7px;
-    color: white;
-    padding: 30px 0; }
-    @media (max-width: 1024px) {
-      main .clock {
-        font-size: 9.5rem; } }
-    @media (max-width: 768px) {
-      main .clock {
-        font-size: 7.5rem; } }
-    @media (max-width: 550px) {
-      main .clock {
-        font-size: 4.5rem; } }
-    @media (max-width: 375px) {
-      main .clock {
-        font-size: 4.5rem; } }
-    @media (max-width: 320px) {
-      main .clock {
-        font-size: 4rem; } }
-  main .scoreCard {
-    font-size: 4rem;
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    line-height: 25px;
-    letter-spacing: 2.7px;
-    color: white; }
-    @media (max-width: 1024px) {
-      main .scoreCard {
-        font-size: 7rem; } }
-    @media (max-width: 550px) {
-      main .scoreCard {
-        font-size: 3rem; } }
-    @media (max-width: 375px) {
-      main .scoreCard {
-        font-size: 2rem; } }
-    main .scoreCard p {
-      font-size: 4rem;
+  min-height: 100vh;
+  padding-top: 2%; }
+  main .mainContainer {
+    background: rgba(181, 219, 242, 0.8);
+    padding: 1%;
+    border-radius: 10px; }
+    main .mainContainer .country {
+      font-size: 7.8rem;
+      font-family: 'Archivo Black', sans-serif;
+      color: #000000;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      color: white;
+      max-width: 100%;
+      text-align: center;
+      margin: 15px 5px; }
+      @media (max-width: 1024px) {
+        main .mainContainer .country {
+          font-size: 8rem; } }
+      @media (max-width: 768px) {
+        main .mainContainer .country {
+          font-size: 4.2rem;
+          margin: 10px;
+          letter-spacing: 1.3px; } }
+      @media (max-width: 375px) {
+        main .mainContainer .country {
+          font-size: 3.2rem;
+          margin: 10px;
+          letter-spacing: 1px; } }
+      @media (max-width: 320px) {
+        main .mainContainer .country {
+          font-size: 3rem;
+          margin: 3px; } }
+    main .mainContainer .clock {
+      font-size: 7rem;
       font-family: 'Montserrat', sans-serif;
       color: #000000;
       line-height: 25px;
       letter-spacing: 2.7px;
       color: white;
-      text-transform: uppercase;
-      padding: 20px 0; }
+      padding: 30px 0; }
       @media (max-width: 1024px) {
-        main .scoreCard p {
-          font-size: 7rem;
-          padding: 30px 0; } }
-      @media (max-width: 550px) {
-        main .scoreCard p {
-          font-size: 3.2rem;
-          padding: 10px 0; } }
+        main .mainContainer .clock {
+          font-size: 9.5rem; } }
+      @media (max-width: 768px) {
+        main .mainContainer .clock {
+          font-size: 4.5rem; } }
       @media (max-width: 375px) {
-        main .scoreCard p {
-          font-size: 3rem;
-          padding: 5px 0; } }
+        main .mainContainer .clock {
+          font-size: 4.5rem; } }
       @media (max-width: 320px) {
-        main .scoreCard p {
+        main .mainContainer .clock {
+          font-size: 4rem; } }
+    main .mainContainer .scoreCard {
+      font-size: 4rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #000000;
+      line-height: 25px;
+      letter-spacing: 2.7px;
+      color: white; }
+      @media (max-width: 1024px) {
+        main .mainContainer .scoreCard {
+          font-size: 7rem; } }
+      @media (max-width: 768px) {
+        main .mainContainer .scoreCard {
           font-size: 3rem; } }
-      @media (max-width: 320px) {
-        main .scoreCard p {
-          font-size: 2.5rem; } }
+      @media (max-width: 375px) {
+        main .mainContainer .scoreCard {
+          font-size: 2rem; } }
+      main .mainContainer .scoreCard p {
+        font-size: 4rem;
+        font-family: 'Montserrat', sans-serif;
+        color: #000000;
+        line-height: 25px;
+        letter-spacing: 2.7px;
+        color: white;
+        text-transform: uppercase;
+        padding: 20px 0; }
+        @media (max-width: 1024px) {
+          main .mainContainer .scoreCard p {
+            font-size: 7rem;
+            padding: 30px 0; } }
+        @media (max-width: 768px) {
+          main .mainContainer .scoreCard p {
+            font-size: 3.2rem;
+            padding: 10px 0; } }
+        @media (max-width: 375px) {
+          main .mainContainer .scoreCard p {
+            font-size: 3rem;
+            padding: 5px 0; } }
+        @media (max-width: 320px) {
+          main .mainContainer .scoreCard p {
+            font-size: 3rem; } }
+        @media (max-width: 320px) {
+          main .mainContainer .scoreCard p {
+            font-size: 2.5rem; } }
 
 .buttons {
   display: flex;
@@ -401,11 +396,6 @@ main {
       flex-direction: column;
       align-items: center; } }
   @media (max-width: 768px) {
-    .buttons {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px; } }
-  @media (max-width: 550px) {
     .buttons {
       flex-direction: column;
       margin: 35px 15px; } }
@@ -437,12 +427,6 @@ main {
         padding: 20px 40px;
         margin: 20px 0; } }
     @media (max-width: 768px) {
-      .buttons .actionButton {
-        font-size: 5rem;
-        width: 80%;
-        padding: 20px 0;
-        margin: 8px 0; } }
-    @media (max-width: 550px) {
       .buttons .actionButton {
         width: 100%;
         padding: 15px 0;
@@ -483,15 +467,16 @@ main {
     text-shadow: 0px -2px #227e8f; }
 
 .finalResult {
-  background-color: rgba(225, 85, 84, 0.5); }
+  background-color: #3a3a3a;
+  min-height: 100vh;
+  padding-top: 2%;
+  padding-bottom: 2%; }
   .finalResult .resultBox {
     display: flex;
+    background-color: #b5dbf2;
+    border-radius: 10px;
     justify-content: space-between; }
     @media (max-width: 768px) {
-      .finalResult .resultBox {
-        flex-direction: column;
-        text-align: center; } }
-    @media (max-width: 550px) {
       .finalResult .resultBox {
         flex-direction: column;
         text-align: center; } }
@@ -506,7 +491,9 @@ main {
       color: #000000;
       line-height: 25px;
       letter-spacing: 2.7px;
-      color: white; }
+      color: white;
+      padding: 2%;
+      flex-basis: 50%; }
       .finalResult .resultBox .rightAnswers h2,
       .finalResult .resultBox .wrongAnswers h2 {
         font-size: 2.3rem;
@@ -515,11 +502,6 @@ main {
         font-weight: 300;
         letter-spacing: 3px; }
         @media (max-width: 768px) {
-          .finalResult .resultBox .rightAnswers h2,
-          .finalResult .resultBox .wrongAnswers h2 {
-            font-size: 3.5rem;
-            line-height: 50px; } }
-        @media (max-width: 550px) {
           .finalResult .resultBox .rightAnswers h2,
           .finalResult .resultBox .wrongAnswers h2 {
             font-size: 3.3rem;
@@ -534,13 +516,10 @@ main {
         font-size: 2rem;
         padding: 2px 0;
         font-weight: 300;
-        letter-spacing: 3px; }
+        letter-spacing: 3px;
+        padding-bottom: 2%;
+        margin-bottom: 2%; }
         @media (max-width: 768px) {
-          .finalResult .resultBox .rightAnswers h3,
-          .finalResult .resultBox .wrongAnswers h3 {
-            font-size: 3rem;
-            margin-bottom: 25px; } }
-        @media (max-width: 550px) {
           .finalResult .resultBox .rightAnswers h3,
           .finalResult .resultBox .wrongAnswers h3 {
             font-size: 2.8rem;
@@ -556,15 +535,9 @@ main {
         text-transform: uppercase;
         color: #274060;
         font-size: 2.5rem;
-        text-align: center;
         font-weight: 400;
         padding: 15px 0; }
         @media (max-width: 768px) {
-          .finalResult .resultBox .rightAnswers h4,
-          .finalResult .resultBox .wrongAnswers h4 {
-            font-size: 4rem;
-            line-height: 50px; } }
-        @media (max-width: 550px) {
           .finalResult .resultBox .rightAnswers h4,
           .finalResult .resultBox .wrongAnswers h4 {
             font-size: 3.5rem;
@@ -574,3 +547,9 @@ main {
           .finalResult .resultBox .wrongAnswers h4 {
             font-size: 2.3rem;
             line-height: 35px; } }
+
+.rightAnswers h3 {
+  border-bottom: 2px solid green; }
+
+.wrongAnswers h3 {
+  border-bottom: 2px solid red; }

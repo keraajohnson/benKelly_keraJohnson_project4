@@ -35,7 +35,7 @@ $buttonColour3: #b4436c;
 $buttonColour4: #2B9EB3;
 $buttonColour5: #274060;
 
-@mixin headings($font-size) {
+@mixin headings($font-size){
     font-size: $font-size;
     font-family: 'Archivo Black', sans-serif;
     color: $mainText;
@@ -43,7 +43,7 @@ $buttonColour5: #274060;
     text-transform: uppercase;
 }
 
-@mixin paragraphs($font-size) {
+@mixin paragraphs($font-size){
     font-size: $font-size;
     font-family: 'Montserrat', sans-serif;
     color: $mainText;
@@ -51,33 +51,32 @@ $buttonColour5: #274060;
     letter-spacing: 2.7px;
 }
 
-@mixin displayFlex {
+@mixin displayFlex{
     display: flex;
 }
 
 // break point mixins
 
-@mixin breakpoint($point) {
+@mixin breakpoint($point){
     // 
-   @if $point == desktop {
-     @media (max-width: 1280px) { @content ; }
-  }
-   @else if $point == laptop {
-     @media (max-width: 1024px) { @content ; }
-  }
-    // 
-    @else if $point == tablet {
-     @media (max-width: 768px) { @content ; }
-  }
-   @else if $point == phablet {
-     @media (max-width: 550px)  { @content ; }
-  }
-  @else if $point == mobileonly {
-     @media (max-width: 375px)  { @content ; }
+    @if $point == desktop{
+        @media (max-width: 1280px) { @content ; }
+    }
+    @else if $point == laptop{
+        @media (max-width: 1024px) { @content ; }
+    }
+        // 
+        @else if $point == phablet{
+        @media (max-width: 768px) { @content ; }
+    }
+    @else if $point == phablet{
+        @media (max-width: 550px)  { @content ; }
+    }
+    @else if $point == mobileonly{
+        @media (max-width: 375px)  { @content ; }
 
-  }
-   @else if $point == smallmobileonly {
-     @media (max-width: 320px)  { @content ; }
-
-  }
+    }
+    @else if $point == smallmobileonly{
+        @media (max-width: 320px)  { @content ; }
+    }
 }

@@ -1,37 +1,46 @@
-.hide {
+.hide{
     display: none;
 }
 
-.smallFont {
+.smallFont{
     font-size: 1rem;
 }
 
-main {
-    background-color: $backgroundColour;
+main{
+    background-color: #b5dbf2;
+    background-image: url(../../../assets/world-map.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: top;
     text-align: center;
-    height: 100vh;
-        .country {
+    min-height: 100vh;
+    padding-top: 2%;
+    .mainContainer{
+        background: rgba(181, 219, 242, 0.8);
+        padding: 1%;
+        border-radius: 10px;
+        .country{
             @include headings(7.8rem);
             color: white;
-            width: 100%;
+            max-width: 100%;
             text-align: center;
             margin: 15px 5px;
             //laptop breakpoint 
             @include breakpoint(laptop){
                 font-size: 8rem;
             }
-             // tablet breakpoint
-            @include breakpoint(tablet) {
+            // tablet breakpoint
+            @include breakpoint(tablet){
                 font-size: 7.5rem;
             } 
             // phabelt breakpoint 
-            @include breakpoint(phablet) {
+            @include breakpoint(phablet){
                 font-size: 4.2rem;
                 margin: 10px;
                 letter-spacing: 1.3px;
             }
             // mobileonly breakpoint
-            @include breakpoint(mobileonly) {
+            @include breakpoint(mobileonly){
                 font-size: 3.2rem;
                 margin: 10px;
                 letter-spacing: 1px;
@@ -42,7 +51,7 @@ main {
                 margin: 3px;
             }
         }
-        .clock {
+        .clock{
             @include paragraphs(7rem);
             color: white;
             padding: 30px 0;
@@ -50,16 +59,16 @@ main {
             @include breakpoint(laptop){
                 font-size: 9.5rem;
             }
-             // tablet breakpoint
-            @include breakpoint(tablet) {
+            // tablet breakpoint
+            @include breakpoint(tablet){
                 font-size: 7.5rem;
             } 
             // phabelt breakpoint 
-            @include breakpoint(phablet) {
+            @include breakpoint(phablet){
                 font-size: 4.5rem;
             }
             // mobileonly breakpoint
-            @include breakpoint(mobileonly) {
+            @include breakpoint(mobileonly){
                 font-size: 4.5rem;
             }
             // smallmobileonly breakpoint 
@@ -67,7 +76,7 @@ main {
                 font-size: 4rem;
             }
         }
-        .scoreCard {
+        .scoreCard{
             @include paragraphs(4rem);
             color: white;
             //laptop breakpoint 
@@ -75,81 +84,79 @@ main {
                 font-size: 7rem;    
             }
             // phabelt breakpoint 
-            @include breakpoint(phablet) {
+            @include breakpoint(phablet){
                 font-size: 3rem;
             }
             // mobileonly breakpoint
-            @include breakpoint(mobileonly) {
+            @include breakpoint(mobileonly){
                 font-size: 2rem;
             }
-                p{
-                    @include paragraphs(4rem);
-                    color: white;
-                    text-transform: uppercase;
-                    padding: 20px 0;
-                    //laptop breakpoint 
-                    @include breakpoint(laptop){
-                        font-size: 7rem; 
-                        padding: 30px 0;  
-                    }
-                    // phabelt breakpoint 
-                    @include breakpoint(phablet) {
-                        font-size: 3.2rem;
-                        padding: 10px 0;
-                    }
-                    // mobileonly breakpoint
-                    @include breakpoint(mobileonly) {
-                        font-size: 3rem;
-                        padding: 5px 0;
-                    }
-                    // smallmobileonly breakpoint 
-                    @include breakpoint(smallmobileonly){
-                        font-size: 3rem;
-                    }
-                    // smallmobileonly breakpoint 
-                    @include breakpoint(smallmobileonly){
-                        font-size: 2.5rem;
-                    }
+            p{
+                @include paragraphs(4rem);
+                color: white;
+                text-transform: uppercase;
+                padding: 20px 0;
+                //laptop breakpoint 
+                @include breakpoint(laptop){
+                    font-size: 7rem; 
+                    padding: 30px 0;  
+                }
+                // phabelt breakpoint 
+                @include breakpoint(phablet){
+                    font-size: 3.2rem;
+                    padding: 10px 0;
+                }
+                // mobileonly breakpoint
+                @include breakpoint(mobileonly){
+                    font-size: 3rem;
+                    padding: 5px 0;
+                }
+                // smallmobileonly breakpoint 
+                @include breakpoint(smallmobileonly){
+                    font-size: 3rem;
+                }
+                // smallmobileonly breakpoint 
+                @include breakpoint(smallmobileonly){
+                    font-size: 2.5rem;
                 }
             }
+        }
     }
+}
 
 // button styles
-.buttons {
+.buttons{
     @include displayFlex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 30px 0;
-      //laptop breakpoint 
+    //laptop breakpoint 
     @include breakpoint(laptop){
         flex-direction: column;
         align-items: center;    
     }
-     // tablet breakpoint
-    @include breakpoint(tablet) {
+    // tablet breakpoint
+    @include breakpoint(tablet){
         flex-direction: column;
         align-items: center;
         margin-top: 20px;
     } 
     // phabelt breakpoint 
-    @include breakpoint(phablet) {
+    @include breakpoint(phablet){
         flex-direction: column;
         margin: 35px 15px;
     }
     // mobileonly breakpoint
-    @include breakpoint(mobileonly) {
+    @include breakpoint(mobileonly){
         flex-direction: column;
         justify-content: center;
         margin: 30px 20px;
     }
-    .animate
-    {
+    .animate{
         transition: all 0.1s;
         -webkit-transition: all 0.1s;
     }
-
-    .actionButton
-    {
+    .actionButton{
         position: relative;
         padding: 20px 40px;
         margin: 10px;
@@ -161,7 +168,7 @@ main {
         text-decoration: none;
         transition: 1s all ease;
         border: none;
-          //laptop breakpoint 
+        //laptop breakpoint 
         @include breakpoint(laptop){
             font-size: 7.5rem;
             letter-spacing: 5px;
@@ -169,21 +176,21 @@ main {
             padding: 20px 40px;
             margin: 20px 0;    
         }
-         // tablet breakpoint
-        @include breakpoint(tablet) {
+        // tablet breakpoint
+        @include breakpoint(tablet){
             font-size: 5rem;
             width: 80%;
             padding: 20px 0;
             margin: 8px 0;
         } 
         // phabelt breakpoint 
-        @include breakpoint(phablet) {
+        @include breakpoint(phablet){
             width: 100%;
             padding: 15px 0;
             font-size: 3rem;
         }
         // mobileonly breakpoint
-        @include breakpoint(mobileonly) {
+        @include breakpoint(mobileonly){
             width: 100%;
             font-size: 2.5rem;
         }	
@@ -192,136 +199,37 @@ main {
             font-size: 2.5rem;
             padding: 10px;
         }
-            &:active {
-                transform: translate(0px,5px);
-                -webkit-transform: translate(0px,5px);
-                border-bottom: 1px solid;
-            }
-            &:active {
-                background-color: $buttonColour5;
-                border-bottom: 5px solid #1f334c;
-                text-shadow: 0px -2px #1f334c;
-                border: none;
-                outline: none;
-            }
+        &:active{
+            transform: translate(0px,5px);
+            -webkit-transform: translate(0px,5px);
+            border-bottom: 1px solid;
+        }
+        &:active{
+            background-color: $buttonColour5;
+            border-bottom: 5px solid #1f334c;
+            text-shadow: 0px -2px #1f334c;
+            border: none;
+            outline: none;
+        }
     }
-
-    .answerOne {
+    .answerOne{
         background-color: $buttonColour1;
         border-bottom: 5px solid #42793c;
         text-shadow: 0px -2px #42793c;
     }
-
-    .answerTwo {
+    .answerTwo{
         background-color: $buttonColour2;
         border-bottom: 5px solid #3d7360;
         text-shadow: 0px -2px #3d7360;
     }
-
-    .answerThree {
+    .answerThree{
         background-color: $buttonColour3;
         border-bottom: 5px solid #903556;
         text-shadow: 0px -2px #903556;
     }
-
-    .answerFour {
+    .answerFour{
         background-color: $buttonColour4;
         border-bottom: 5px solid #227e8f;
         text-shadow: 0px -2px #227e8f;
     }
-}    
-
-.finalResult {
-    background-color: rgba(225,85,84, 0.5);
-      .resultBox {
-          @include displayFlex;
-          justify-content: space-between;
-           // tablet breakpoint
-            @include breakpoint(tablet) {
-                flex-direction: column;
-                text-align: center;
-            } 
-          // phabelt breakpoint 
-            @include breakpoint(phablet) {
-                flex-direction: column;
-                text-align: center;
-            }
-          // mobileonly breakpoint
-            @include breakpoint(mobileonly) {
-                flex-direction: column;
-                text-align: center;
-            }
-              .rightAnswers,
-              .wrongAnswers { 
-                @include paragraphs(1rem);
-                color: white;
-                    h2 {
-                        font-size: 2.3rem;
-                        text-transform: uppercase;
-                        padding: 5px 0;
-                        font-weight: 300;
-                        letter-spacing: 3px;
-                         // tablet breakpoint
-                        @include breakpoint(tablet) {
-                            font-size: 3.5rem;
-                            line-height: 50px;
-                        } 
-                        // phabelt breakpoint 
-                        @include breakpoint(phablet) {
-                            font-size: 3.3rem;
-                            line-height: 40px;
-                        }
-                        // smallmobileonly breakpoint 
-                        @include breakpoint(smallmobileonly){
-                            font-size: 2.3rem;
-                            line-height: 30px;
-                        }
-                    }
-                    h3 {
-                        font-size: 2rem;
-                        padding: 2px 0;
-                        font-weight: 300;
-                        letter-spacing: 3px;
-                         // tablet breakpoint
-                        @include breakpoint(tablet) {
-                            font-size: 3rem;
-                            margin-bottom: 25px;
-                        } 
-                        // phabelt breakpoint 
-                        @include breakpoint(phablet) {
-                            font-size: 2.8rem;
-                            margin-bottom: 20px;
-                            line-height: 35px;
-                        }
-                        // smallmobileonly breakpoint 
-                        @include breakpoint(smallmobileonly){
-                            font-size: 2.5rem;
-                            line-height: 30px;
-                        }
-                    }   
-                    h4 {
-                        text-transform: uppercase;
-                        color: $buttonColour5;
-                        font-size: 2.5rem;
-                        text-align: center;
-                        font-weight: 400;
-                        padding: 15px 0;
-                         // tablet breakpoint
-                        @include breakpoint(tablet) {
-                            font-size: 4rem;
-                            line-height: 50px;
-                        } 
-                        // phabelt breakpoint 
-                        @include breakpoint(phablet) {
-                            font-size: 3.5rem;
-                            line-height: 45px;
-                        }
-                        // smallmobileonly breakpoint 
-                        @include breakpoint(smallmobileonly){
-                            font-size: 2.3rem;
-                            line-height: 35px;
-                        }
-                    } 
-            }  
-      }
 }
