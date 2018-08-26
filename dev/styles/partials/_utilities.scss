@@ -37,16 +37,14 @@ $buttonColour5: #274060;
 
 @mixin headings($font-size) {
     font-size: $font-size;
-    // new
     font-family: 'Archivo Black', sans-serif;
     color: $mainText;
-    letter-spacing: 9px;
+    letter-spacing: 10px;
     text-transform: uppercase;
 }
 
 @mixin paragraphs($font-size) {
     font-size: $font-size;
-    // new
     font-family: 'Montserrat', sans-serif;
     color: $mainText;
     line-height: 25px;
@@ -60,20 +58,26 @@ $buttonColour5: #274060;
 // break point mixins
 
 @mixin breakpoint($point) {
+    // 
    @if $point == desktop {
-     @media (max-width: 1080px) { @content ; }
+     @media (max-width: 1280px) { @content ; }
   }
    @else if $point == laptop {
-     @media (max-width: 940px) { @content ; }
+     @media (max-width: 1024px) { @content ; }
   }
+    // 
     @else if $point == tablet {
-     @media (max-width: 600px) { @content ; }
+     @media (max-width: 768px) { @content ; }
   }
    @else if $point == phablet {
      @media (max-width: 550px)  { @content ; }
   }
   @else if $point == mobileonly {
-     @media (max-width: 340px)  { @content ; }
+     @media (max-width: 375px)  { @content ; }
+
+  }
+   @else if $point == smallmobileonly {
+     @media (max-width: 320px)  { @content ; }
 
   }
 }
