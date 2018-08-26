@@ -15,6 +15,12 @@
                 color: white;
                 text-align: center;
                 margin: 20px 0;
+                //laptop breakpoint 
+                @include breakpoint(laptop){
+                    font-size: 11rem;
+                    line-height: 120px;
+                    margin-bottom: 50px;
+                }
                 // tablet breakpoint
                 @include breakpoint(tablet) {
                     font-size: 7.6rem; 
@@ -41,6 +47,13 @@
                     letter-spacing: 4px;
                     text-align: center;
                     line-height: 45px;
+                      //laptop breakpoint 
+                    @include breakpoint(laptop){
+                        font-size: 5.8rem;
+                        letter-spacing: 4.5px;
+                        line-height: 75px;
+                        margin-bottom: 50px;
+                    }
                      // tablet breakpoint
                     @include breakpoint(tablet) {
                        font-size: 4.3rem;
@@ -78,6 +91,13 @@
                     border-radius: 100px;
                     text-transform: uppercase;
                     transition: .5s all ease;
+                      //laptop breakpoint 
+                    @include breakpoint(laptop){
+                        width: 45%;
+                        font-size: 6rem;
+                        letter-spacing: 6px;  
+                        padding: 40px 0;  
+                    }
                      // tablet breakpoint
                     @include breakpoint(tablet) {
                        width: 45%; 
