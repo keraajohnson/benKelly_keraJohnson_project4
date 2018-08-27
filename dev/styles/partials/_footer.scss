@@ -1,0 +1,111 @@
+.finalResult{
+    background-color: #3a3a3a;
+    min-height: 100vh;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    .resultBox{
+        @include displayFlex;
+        background-color: #b5dbf2;
+        border-radius: 10px;
+        justify-content: space-between;
+        // tablet breakpoint
+        @include breakpoint(tablet){
+            flex-direction: column;
+            text-align: center;
+        } 
+        // phabelt breakpoint 
+        @include breakpoint(phablet){
+            flex-direction: column;
+            text-align: center;
+        }
+        // mobileonly breakpoint
+        @include breakpoint(mobileonly){
+            flex-direction: column;
+            text-align: center;
+        }
+        .rightAnswers,
+        .wrongAnswers{ 
+            @include paragraphs(1rem);
+            color: white;
+            padding: 2%;
+            flex-basis: 50%;
+            h2{
+                font-size: 2.3rem;
+                text-transform: uppercase;
+                padding: 5px 0;
+                font-weight: 300;
+                letter-spacing: 3px;
+                // tablet breakpoint
+                @include breakpoint(tablet){
+                    font-size: 3.5rem;
+                    line-height: 50px;
+                    flex-basis: 100%;
+                } 
+                // phabelt breakpoint 
+                @include breakpoint(phablet){
+                    font-size: 3.3rem;
+                    line-height: 40px;
+                }
+                // smallmobileonly breakpoint 
+                @include breakpoint(smallmobileonly){
+                    font-size: 2.3rem;
+                    line-height: 30px;
+                }
+            }
+            h3{
+                font-size: 2rem;
+                padding: 2px 0;
+                font-weight: 300;
+                letter-spacing: 3px;
+                padding-bottom: 2%;
+                margin-bottom: 2%;
+                // tablet breakpoint
+                @include breakpoint(tablet){
+                    font-size: 3rem;
+                    margin-bottom: 25px;
+                } 
+                // phabelt breakpoint 
+                @include breakpoint(phablet){
+                    font-size: 2.8rem;
+                    margin-bottom: 20px;
+                    line-height: 35px;
+                }
+                // smallmobileonly breakpoint 
+                @include breakpoint(smallmobileonly){
+                    font-size: 2.5rem;
+                    line-height: 30px;
+                }
+            }   
+            h4{
+                text-transform: uppercase;
+                color: $buttonColour5;
+                font-size: 2.5rem;
+                font-weight: 400;
+                padding: 15px 0;
+                // tablet breakpoint
+                @include breakpoint(tablet){
+                    font-size: 4rem;
+                    line-height: 50px;
+                } 
+                // phabelt breakpoint 
+                @include breakpoint(phablet){
+                    font-size: 3.5rem;
+                    line-height: 45px;
+                }
+                // smallmobileonly breakpoint 
+                @include breakpoint(smallmobileonly){
+                    font-size: 2.3rem;
+                    line-height: 35px;
+                }
+            }
+        }  
+    }
+}
+
+.rightAnswers h3{
+    border-bottom: 2px solid green;
+}
+
+.wrongAnswers h3{
+    border-bottom:2px solid red;
+}
