@@ -163,10 +163,7 @@ body {
   position: relative; }
 
 .gameLoad {
-  background-image: url(../../../assets/flight-app-EN.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top left;
+  background: #f78154;
   width: 100%;
   min-height: 100vh;
   padding: 40px; }
@@ -284,10 +281,6 @@ body {
 
 main {
   background-color: #b5dbf2;
-  background-image: url(../../../assets/world-map.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
   text-align: center;
   min-height: 100vh;
   padding-top: 2%; }
